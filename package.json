@@ -1,0 +1,31 @@
+{
+  "name": "node-json-api",
+  "version": "1.0.0",
+  "description": "index npm",
+  "main": "index.js",
+  "scripts": {
+    "start": "node test",
+    "dev": "nodemon index"
+  },
+  "author": "NunVe",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "moment": "^2.27.0",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.7.4",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nunyvega/node-json-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nunyvega/node-json-api/issues"
+  },
+  "homepage": "https://github.com/nunyvega/node-json-api#readme"
+}
