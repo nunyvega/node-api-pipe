@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger');
-const courses = require('./Courses');
+const searches = require('./Searches');
 
 const app = express();
 
@@ -17,8 +17,8 @@ app.set('view engine', 'handlebars');
 
 // Homepage route
 app.get('/', (req,res) => res.render('index', {
-    title: 'Courses log',
-    courses
+    title: 'Searches log',
+    searches
     })
 );
 
@@ -32,8 +32,8 @@ const PORT = process.env.PORT ||5000;
 
 
 
-// Courses API routes
-app.use('/api/courses', require('./api/courses'));
+// Searches API routes
+app.use('/api/searches', require('./api/searches'));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
