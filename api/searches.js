@@ -21,7 +21,8 @@ response.on('data', (chunk) => {
 
 // called when the complete response is received.
 response.on('end', () => {
-  theUrl =  JSON.parse(todo).posts[0].URL; 
+  if ( JSON.parse(todo).posts == undefined || JSON.parse(todo).posts.length == 0) {theUrl = 'Nothing found'}
+  else {  theUrl =  JSON.parse(todo).posts[0].URL; }
   newValue.url = theUrl;
   searches.unshift(newValue);
   res.redirect('/');
@@ -51,8 +52,8 @@ https.get(`https://public-api.wordpress.com/rest/v1.1/read/tags/${req.params.id}
 
   // called when the complete response is received.
   response.on('end', () => {
-    console.log(todo);
-    theUrl =  JSON.parse(todo).posts[0].URL; 
+    if ( JSON.parse(todo).posts == undefined || JSON.parse(todo).posts.length == 0) {theUrl = 'Nothing found'}
+    else{ theUrl =  JSON.parse(todo).posts[0].URL; }
     res.json(theUrl)
   });
 
